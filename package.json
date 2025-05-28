@@ -1,0 +1,63 @@
+{
+  "name": "rutherford",
+  "version": "0.0.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "electron/main.js",
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "electron": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+  "dist": "vite build && electron-builder",
+  "predeploy": "cross-env BUILD_TARGET=github npm run build",
+  "deploy": "gh-pages -d dist-frontend"
+},
+  "build": {
+    "appId": "com.rutherford.simulador",
+    "productName": "SimuladorRutherford",
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist"
+    },
+    "files": [
+      "dist-frontend",
+      "electron/**"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "dependencies": {
+    "framer-motion": "^12.12.1",
+    "lucide-react": "^0.511.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@tailwindcss/postcss": "^4.1.7",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^36.3.1",
+    "electron-builder": "^26.0.12",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "gh-pages": "^6.3.0",
+    "globals": "^16.0.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.3.5",
+    "wait-on": "^8.0.3"
+  },
+  "description": "Simulador de dispersión alfa empaquetado con Electron y Vite",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
