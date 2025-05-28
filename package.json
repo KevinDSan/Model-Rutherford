@@ -1,5 +1,5 @@
 {
-  "name": "rutherford",
+  "name": "model-rutherford",
   "version": "0.0.0",
   "private": true,
   "type": "commonjs",
@@ -58,6 +58,6 @@
   },
   "description": "Simulador de dispersión alfa empaquetado con Electron y Vite",
   "keywords": [],
-  "author": "",
+  "author": "Kevin D. Sanchez & Juan D. Triana",
   "license": "ISC"
 }
